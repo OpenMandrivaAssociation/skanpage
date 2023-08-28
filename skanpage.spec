@@ -13,6 +13,27 @@ URL: https://github.com/skanpage/skanpage
 License: GPL
 Group: Utilities
 BuildRequires: cmake ninja
+BuildRequires: cmake(ECM)
+BuildRequires: pkgconfig(tesseract)
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5QmlModels)
+BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Qt5Concurrent)
+BuildRequires: cmake(Qt5Quick)
+BuildRequires: cmake(Qt5PrintSupport)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5Kirigami2)
+BuildRequires: cmake(KF5Crash)
+BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5Purpose)
+BuildRequireS: cmake(KF5Config)
+BuildRequires: cmake(KF5XmlGui)
+BuildRequires: cmake(KSaneCore)
+BuildRequires: cmake(KQuickImageEditor)
 Provides: scanner-gui
 
 %description
