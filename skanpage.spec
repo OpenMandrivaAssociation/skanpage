@@ -2,7 +2,7 @@
 
 Name: skanpage
 Version: 23.08.4
-Release: 1
+Release: 2
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/utilities/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else
