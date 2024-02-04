@@ -1,8 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma6-skanpage
-Version: 24.01.90
-Release: 2
+Version: 24.01.95
+Release: 1
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/utilities/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else
