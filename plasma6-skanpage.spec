@@ -1,12 +1,23 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma6-skanpage
-Version: 24.01.95
-Release: 1
+Version: 24.01.96
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/utilities/skanpage/-/archive/%{gitbranch}/skanpage-%{gitbranchd}.tar.bz2#/skanpage-%{git}.tar.bz2
+%else
 Source0:        https://invent.kde.org/utilities/%{name}/-/archive/master/%{name}-master.tar.bz2
+%endif
+%else
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/utilities/skanpage/-/archive/%{gitbranch}/skanpage-%{gitbranchd}.tar.bz2#/skanpage-%{git}.tar.bz2
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/skanpage-%{version}.tar.xz
+%endif
 %endif
 Summary: Utility to scan images and multi-page documents
 URL: https://github.com/skanpage/skanpage
@@ -40,7 +51,7 @@ Provides: scanner-gui
 Utility to scan images and multi-page documents
 
 %prep
-%autosetup -p1 -n skanpage-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n skanpage-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake -G Ninja
 
 %build
