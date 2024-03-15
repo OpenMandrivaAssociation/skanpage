@@ -5,7 +5,7 @@
 
 Name: plasma6-skanpage
 Version: 24.02.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/skanpage/-/archive/%{gitbranch}/skanpage-%{gitbranchd}.tar.bz2#/skanpage-%{git}.tar.bz2
