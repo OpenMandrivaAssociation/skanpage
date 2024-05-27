@@ -35,6 +35,7 @@ BuildRequires: cmake(Qt6Concurrent)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6PrintSupport)
 BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6Pdf)
 BuildRequires: cmake(Qt6)
 BuildRequires: cmake(KF6I18n)
 BuildRequires: cmake(KF6Kirigami2)
@@ -46,19 +47,12 @@ BuildRequires: cmake(KF6XmlGui)
 BuildRequires: cmake(KSaneCore6)
 BuildRequires: cmake(KQuickImageEditor)
 Provides: scanner-gui
+BuildSystem: cmake
 
 %description
 Utility to scan images and multi-page documents
 
-%prep
-%autosetup -p1 -n skanpage-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake -G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
+%install -a
 %find_lang skanpage
 
 %files -f skanpage.lang
