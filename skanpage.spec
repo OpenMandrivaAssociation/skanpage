@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: skanpage
-Version: 25.04.0
+Version: 25.04.3
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 %if 0%{?git:1}
@@ -23,7 +23,6 @@ Summary: Utility to scan images and multi-page documents
 URL: https://github.com/skanpage/skanpage
 License: GPL
 Group: Utilities
-BuildRequires: cmake ninja
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(tesseract)
 BuildRequires: cmake(Qt6Core)
@@ -49,14 +48,14 @@ BuildRequires: cmake(KSaneCore6)
 BuildRequires: cmake(KQuickImageEditor)
 Provides: scanner-gui
 BuildSystem: cmake
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%rename plasma6-skanpage
 
 %description
 Utility to scan images and multi-page documents
 
-%install -a
-%find_lang skanpage
-
-%files -f skanpage.lang
+%files -f %{name}.lang
 %{_bindir}/skanpage
 %{_datadir}/applications/org.kde.skanpage.desktop
 %{_datadir}/icons/hicolor/*/*/skanpage.*
