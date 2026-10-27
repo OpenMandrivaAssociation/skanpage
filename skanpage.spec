@@ -5,7 +5,7 @@
 
 Name: skanpage
 Version: 26.08.2
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/skanpage/-/archive/%{gitbranch}/skanpage-%{gitbranchd}.tar.bz2#/skanpage-%{git}.tar.bz2
